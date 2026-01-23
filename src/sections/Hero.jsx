@@ -7,7 +7,7 @@ const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <section id="hero" className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
+        <section id="hero" className="h-[100dvh] flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900/50 via-background to-background z-0"></div>
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-0 mix-blend-overlay"></div>
@@ -17,14 +17,14 @@ const Hero = () => {
                     src="/logo.png"
                     alt="Bek to the Future"
                     className="w-full max-w-2xl mb-8 drop-shadow-[0_0_15px_rgba(255,77,0,0.5)]"
-                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    initial={{ opacity: 0, scale: window.innerWidth < 768 ? 1 : 0.95, y: window.innerWidth < 768 ? 0 : 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 />
 
                 <motion.h2
                     className="text-xl md:text-2xl font-inter font-light tracking-[0.2em] text-gray-400 mb-12 uppercase"
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: window.innerWidth < 768 ? 0 : 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
                 >
@@ -34,7 +34,7 @@ const Hero = () => {
                 <motion.a
                     href="#sound"
                     className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-retro-orange/50 text-white font-orbitron uppercase tracking-widest hover:bg-retro-orange/10 transition-all duration-300 hover:border-retro-yellow hover:shadow-[0_0_20px_rgba(255,204,0,0.4)]"
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: window.innerWidth < 768 ? 0 : 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
                 >

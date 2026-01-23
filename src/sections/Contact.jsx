@@ -17,7 +17,7 @@ const Contact = () => {
         <section id="contact" className="py-20 min-h-[60vh] flex items-center justify-center bg-black relative">
             <div className="max-w-4xl mx-auto px-4 text-center">
                 <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: window.innerWidth < 768 ? 0 : 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -28,7 +28,7 @@ const Contact = () => {
 
                 <motion.div
                     className="flex justify-center items-center gap-8 md:gap-12 mb-16"
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: window.innerWidth < 768 ? 1 : 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}

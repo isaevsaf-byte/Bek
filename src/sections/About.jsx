@@ -9,7 +9,7 @@ const About = () => {
         <section id="about" className="min-h-[80vh] flex items-center justify-center py-20 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: window.innerWidth < 768 ? 0 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -22,7 +22,7 @@ const About = () => {
 
                 <div className="flex justify-center">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: window.innerWidth < 768 ? 0 : 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}

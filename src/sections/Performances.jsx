@@ -15,7 +15,7 @@ const Performances = () => {
         <section id="performances" className="py-20 bg-black relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: window.innerWidth < 768 ? 0 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -30,7 +30,7 @@ const Performances = () => {
                     {gigs.map((gig, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: window.innerWidth < 768 ? 0 : 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.7, ease: "easeOut" }}

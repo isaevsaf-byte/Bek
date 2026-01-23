@@ -19,7 +19,7 @@ const Sound = () => {
     const { t } = useLanguage();
 
     const fadeInUp = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: window.innerWidth < 768 ? 0 : 30 },
         visible: {
             opacity: 1,
             y: 0,

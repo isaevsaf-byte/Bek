@@ -34,7 +34,7 @@ const Gallery = () => {
         <section id="gallery" className="py-20 bg-background relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: window.innerWidth < 768 ? 0 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -73,7 +73,7 @@ const Gallery = () => {
                             <motion.div
                                 key={index}
                                 className="flex-shrink-0 relative group overflow-hidden bg-gray-900 border border-white/10 snap-center w-[300px] sm:w-[400px] aspect-[4/5] sm:aspect-square"
-                                initial={{ opacity: 0, scale: 0.95 }}
+                                initial={{ opacity: 0, scale: window.innerWidth < 768 ? 1 : 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1, duration: 0.7, ease: "easeOut" }}
