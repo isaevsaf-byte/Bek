@@ -5,7 +5,13 @@ import { useLanguage } from '../context/LanguageContext';
 const Gallery = () => {
     const { t } = useLanguage();
 
-    const items = [1, 2, 3, 4, 5, 6, 7, 8];
+    const items = [
+        '/gallery/IMG_0581.jpg',
+        '/gallery/IMG_0582.jpg',
+        '/gallery/IMG_0583.jpg',
+        '/gallery/IMG_0584.jpg',
+        '/gallery/IMG_1123.jpg'
+    ];
 
     return (
         <section id="gallery" className="py-20 bg-background relative overflow-hidden">
@@ -24,7 +30,7 @@ const Gallery = () => {
                 {/* Horizontal Scroll Layout */}
                 <div className="relative">
                     <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
-                        {items.map((item, index) => (
+                        {items.map((src, index) => (
                             <motion.div
                                 key={index}
                                 className="flex-shrink-0 relative group overflow-hidden bg-gray-900 border border-white/10 snap-center w-[300px] sm:w-[400px] aspect-[4/5] sm:aspect-square"
@@ -33,10 +39,12 @@ const Gallery = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                             >
+                                <img
+                                    src={src}
+                                    alt={`Gallery image ${index + 1}`}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-neon-magenta/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-700 font-orbitron text-xl">
-                                    [IMG {item}]
-                                </div>
                             </motion.div>
                         ))}
                     </div>
