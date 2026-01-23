@@ -18,14 +18,23 @@ const MixcloudIcon = ({ className }) => (
 const Sound = () => {
     const { t } = useLanguage();
 
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: "easeOut" }
+        }
+    };
+
     return (
         <section id="sound" className="py-20 bg-background relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                     className="mb-12 border-l-2 border-neon-cyan pl-6"
                 >
                     <h2 className="text-4xl md:text-6xl font-orbitron font-bold uppercase text-white drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
@@ -40,10 +49,10 @@ const Sound = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-[#FF5500] hover:shadow-[0_0_30px_rgba(255,85,0,0.3)] transition-all duration-300"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#FF5500]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="relative z-10 flex items-center justify-between">
@@ -66,10 +75,10 @@ const Sound = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-[#5000FF] hover:shadow-[0_0_30px_rgba(80,0,255,0.3)] transition-all duration-300"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#5000FF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="relative z-10 flex items-center justify-between">
@@ -90,10 +99,10 @@ const Sound = () => {
                 {/* Spotify / Moods Section */}
                 <div className="border-t border-white/10 pt-16">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                         className="mb-8"
                     >
                         <h3 className="text-2xl md:text-3xl font-orbitron font-bold uppercase text-white mb-8">
@@ -108,10 +117,10 @@ const Sound = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
+                            variants={fadeInUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             <div className="flex items-center gap-4">
                                 {/* Monochrome to Green Icon */}
@@ -131,10 +140,10 @@ const Sound = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
+                            variants={fadeInUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             <div className="flex items-center gap-4">
                                 {/* Monochrome to Green Icon */}
