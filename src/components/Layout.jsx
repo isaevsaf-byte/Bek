@@ -105,23 +105,34 @@ const Navbar = () => {
 };
 
 const Footer = () => {
-    const { language } = useLanguage();
-
     return (
         <footer className="bg-black border-t border-white/10 py-8">
             <div className="max-w-7xl mx-auto px-4 text-center">
-                <p className="text-gray-500 text-sm font-mono mb-4">
-                    © {new Date().getFullYear()} BEK TO THE FUTURE. ALL RIGHTS RESERVED.
+                <p className="text-gray-600 text-[10px] font-mono mb-4 uppercase tracking-widest opacity-50">
+                    © {new Date().getFullYear()} Bek to the Future
                 </p>
 
-                <div className="footer-credit">
+                <div className="font-mono text-[11px] md:text-[12px] text-[#666] flex items-center justify-center gap-3">
+                    <span className="tracking-tight">
+                        System Architect: <span className="text-white">Saf</span>
+                    </span>
+                    <span className="text-[#444]">//</span>
                     <a
-                        href="mailto:saf@safarisaev.ai?subject=Project Inquiry (via BekToTheFuture)"
-                        className="dev-link font-mono text-gray-500 hover:text-neon-cyan transition-colors duration-300 hover-glitch inline-block"
+                        href="https://t.me/SafarIsaev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-retro-orange transition-colors duration-300"
                     >
-                        <span className={language === 'en' ? '' : 'hidden'}>Constructed by Saf</span>
-                        <span className={language === 'ru' ? '' : 'hidden'}>Спроектировано Saf</span>
+                        TG
                     </a>
+                    <span className="text-[#444]">: :</span>
+                    <a
+                        href="mailto:saf@safarisaev.ai?subject=Project Inquiry"
+                        className="hover:text-neon-cyan transition-colors duration-300"
+                    >
+                        MAIL
+                    </a>
+                    <span className="animate-blink text-neon-cyan">_</span>
                 </div>
             </div>
         </footer>
