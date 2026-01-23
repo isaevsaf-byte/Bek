@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { Instagram, Mail, Music, Disc } from 'lucide-react';
+import { Instagram, Mail, Music, Disc, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
     const { t } = useLanguage();
 
     const socials = [
         { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/bektothefuturefuture', color: 'hover:text-pink-500' },
-        { name: 'SoundCloud', icon: Music, href: 'https://soundcloud.com/bekkhalimov', color: 'hover:text-retro-orange' },
+        { name: 'SoundCloud', icon: Music, href: 'https://soundcloud.com/begi4', color: 'hover:text-retro-orange' },
         { name: 'Mixcloud', icon: Disc, href: 'https://www.mixcloud.com/bekkhalimov/', color: 'hover:text-neon-cyan' },
+        { name: 'Telegram', icon: MessageCircle, href: 'https://t.me/bekinuzb', color: 'hover:text-blue-400' },
     ];
 
     return (

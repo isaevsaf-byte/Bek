@@ -20,10 +20,10 @@ const Sound = () => {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     {/* SoundCloud Card */}
                     <motion.a
-                        href="https://soundcloud.com/bekkhalimov" // Updated to likely profile URL based on short link behavior, or user can update.
+                        href="https://soundcloud.com/begi4"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-retro-orange transition-colors duration-300"
@@ -74,10 +74,64 @@ const Sound = () => {
                     </motion.a>
                 </div>
 
-                {/* Optional: Embeds could go here if IFrames are preferred, but links are cleaner for minimal vibe */}
-                <div className="mt-12 text-center text-gray-500 text-sm font-mono">
-                    <p>LISTEN ON YOUR PREFERRED PLATFORM</p>
+                {/* Spotify / Moods Section */}
+                <div className="border-t border-white/10 pt-16">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="mb-8"
+                    >
+                        <h3 className="text-2xl md:text-3xl font-orbitron font-bold uppercase text-white mb-8">
+                            {t.sound.spotify_title}
+                        </h3>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Playlist 1 */}
+                        <motion.a
+                            href="#"
+                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <div className="flex items-center gap-4">
+                                {/* Monochrome to Green Icon */}
+                                <div className="p-3 bg-black rounded-full border border-white/10 group-hover:border-[#1DB954] transition-colors duration-300">
+                                    <Disc className="w-6 h-6 text-gray-400 group-hover:text-[#1DB954] transition-colors duration-300" />
+                                </div>
+                                <span className="font-orbitron text-lg text-white group-hover:text-[#1DB954] transition-colors duration-300">
+                                    {t.sound.spotify_btn_1}
+                                </span>
+                            </div>
+                            <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-[#1DB954] transition-colors" />
+                        </motion.a>
+
+                        {/* Playlist 2 */}
+                        <motion.a
+                            href="#"
+                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                        >
+                            <div className="flex items-center gap-4">
+                                {/* Monochrome to Green Icon */}
+                                <div className="p-3 bg-black rounded-full border border-white/10 group-hover:border-[#1DB954] transition-colors duration-300">
+                                    <Disc className="w-6 h-6 text-gray-400 group-hover:text-[#1DB954] transition-colors duration-300" />
+                                </div>
+                                <span className="font-orbitron text-lg text-white group-hover:text-[#1DB954] transition-colors duration-300">
+                                    {t.sound.spotify_btn_2}
+                                </span>
+                            </div>
+                            <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-[#1DB954] transition-colors" />
+                        </motion.a>
+                    </div>
                 </div>
+
             </div>
         </section>
     );

@@ -6,10 +6,9 @@ const Performances = () => {
     const { t, language } = useLanguage();
 
     const gigs = [
-        { date: '2025-11-21', city: 'Moscow', venue: 'Mutabor', status: 'Past' },
-        { date: '2025-12-15', city: 'Tbilisi', venue: 'Bassiani', status: 'Past' },
-        { date: '2026-02-14', city: 'Dubai', venue: 'Soho Garden', status: 'Upcoming' },
-        { date: '2026-03-01', city: 'Istanbul', venue: 'Klein Phönix', status: 'Upcoming' },
+        { date: 'Past', city: 'Tashkent', venue: 'Gravity Bar, Zevon Bar, Sado Bar', status: 'Past' },
+        { date: 'Past', city: 'Muynak', venue: 'Stihia Festival', status: 'Past' },
+        { date: 'Upcoming', city: 'Tashkent', venue: 'The Bar', status: 'Upcoming' },
     ];
 
     return (
