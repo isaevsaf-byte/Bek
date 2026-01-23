@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Gallery = () => {
     const { t } = useLanguage();
+    const scrollContainerRef = useRef(null);
 
     const items = [
         '/gallery/IMG_0581.jpg',
@@ -12,6 +14,21 @@ const Gallery = () => {
         '/gallery/IMG_0584.jpg',
         '/gallery/IMG_1123.jpg'
     ];
+
+    const scroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 400; // Adjust scroll distance
+            const container = scrollContainerRef.current;
+            const newScrollLeft = direction === 'left'
+                ? container.scrollLeft - scrollAmount
+                : container.scrollLeft + scrollAmount;
+
+            container.scrollTo({
+                left: newScrollLeft,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
         <section id="gallery" className="py-20 bg-background relative overflow-hidden">
@@ -28,8 +45,29 @@ const Gallery = () => {
                 </motion.div>
 
                 {/* Horizontal Scroll Layout */}
-                <div className="relative">
-                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
+                <div className="relative group/gallery">
+                    {/* Left Button */}
+                    <button
+                        onClick={() => scroll('left')}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/50 hover:bg-neon-magenta/80 text-white rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 disabled:opacity-0 -ml-2 sm:ml-0"
+                        aria-label="Scroll left"
+                    >
+                        <ChevronLeft className="w-8 h-8" />
+                    </button>
+
+                    {/* Right Button */}
+                    <button
+                        onClick={() => scroll('right')}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/50 hover:bg-neon-magenta/80 text-white rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 -mr-2 sm:mr-0"
+                        aria-label="Scroll right"
+                    >
+                        <ChevronRight className="w-8 h-8" />
+                    </button>
+
+                    <div
+                        ref={scrollContainerRef}
+                        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide scroll-smooth"
+                    >
                         {items.map((src, index) => (
                             <motion.div
                                 key={index}
