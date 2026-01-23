@@ -20,34 +20,15 @@ const About = () => {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="flex justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.7 }}
-                        className="font-inter text-lg md:text-xl text-gray-300 leading-relaxed space-y-6"
+                        className="font-inter text-lg md:text-xl text-gray-300 leading-relaxed max-w-[65ch] text-center"
                     >
-                        <p>
-                            {t.about.bio}
-                        </p>
-                        <p className="text-gray-500 text-base">
-                            The underground isn't a place, it's a frequency.
-                        </p>
-                    </motion.div>
-
-                    {/* Placeholder for an artist image or visual element */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4, duration: 0.7 }}
-                        className="relative h-64 md:h-96 bg-gray-900 rounded-sm overflow-hidden border border-white/10 group"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-retro-orange/20 to-neon-cyan/20 opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-                        <div className="absolute inset-0 flex items-center justify-center text-gray-700 font-orbitron text-2xl">
-                            [Artist Photo Placeholder]
-                        </div>
+                        <p dangerouslySetInnerHTML={{ __html: t.about.bio }}></p>
                     </motion.div>
                 </div>
             </div>

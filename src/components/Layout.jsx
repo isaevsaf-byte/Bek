@@ -47,11 +47,14 @@ const Navbar = () => {
                             ))}
                             <button
                                 onClick={toggleLanguage}
-                                className="flex items-center text-gray-300 hover:text-neon-magenta transition-colors"
+                                className="group flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black/50 hover:border-neon-cyan/50 hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all duration-300 relative overflow-hidden"
                                 aria-label="Toggle Language"
                             >
-                                <Globe className="w-5 h-5 mr-1" />
-                                <span className="font-mono text-xs uppercase">{language}</span>
+                                <div className="absolute inset-0 bg-gradient-to-tr from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                <Globe className="w-5 h-5 text-gray-400 group-hover:text-neon-cyan group-hover:animate-spin-slow transition-colors" />
+                                <span className="absolute -bottom-1 text-[8px] font-mono font-bold text-gray-500 group-hover:text-white uppercase tracking-tighter">
+                                    {language}
+                                </span>
                             </button>
                         </div>
                     </div>

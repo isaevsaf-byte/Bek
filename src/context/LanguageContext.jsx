@@ -24,7 +24,7 @@ export const LanguageProvider = ({ children }) => {
             },
             about: {
                 title: "The Identity",
-                bio: "Bek to the Future is the alter ego of Bek, who works in an office during the day and dives into the world of underground electronic music by night. His style is based on tech house & Melodic house—rhythmic and melodic music with influences from artists like Mark Knight and the atmospheric sound of Anjunabeats. Hailing from Bukhara, the aspiring artist started his journey behind the DJ booth at Wild Chill parties—small gatherings for a close-knit circle of true electronic music lovers. Since then, he has become a fixture in the capital's nightlife, performing at the top bars of Tashkent, including Gravity, Zevon, and The Bar. Most notably, Bek reached his milestone by performing at Stihia Festival, cementing his place within the electronic music scene."
+                bio: "<span class='text-retro-orange font-bold'>Office professional by day, underground explorer by night.</span> Hailing from Bukhara, Bek blends driving Tech House rhythms with atmospheric melodies.<br/><br/>From intimate Wild Chill gatherings to the main stage at <span class='text-retro-orange font-bold'>Stihia Festival</span>, he is now a fixture in Tashkent’s nightlife—bringing the sound of the future to venues like <span class='text-retro-orange font-bold'>Gravity, Zevon, and The Bar.</span>"
             },
             sound: {
                 title: "The Sound",
@@ -60,7 +60,7 @@ export const LanguageProvider = ({ children }) => {
             },
             about: {
                 title: "Личность",
-                bio: "Bek to the Future — это альтер-эго Бека, который днем работает в офисе, а ночью погружается в мир андерграундной электронной музыки. Его стиль основан на tech house и Melodic house — ритмичной и мелодичной музыке с влиянием таких артистов, как Mark Knight, и атмосферного звучания Anjunabeats. Родом из Бухары, начинающий артист начал свой путь за пультом на вечеринках Wild Chill — небольших собраниях для узкого круга истинных ценителей электронной музыки. С тех пор он стал неотъемлемой частью ночной жизни столицы, выступая в топовых барах Ташкента, включая Gravity, Zevon и The Bar. Самым значимым достижением Бека стало выступление на фестивале Stihia, закрепившее его место на сцене электронной музыки."
+                bio: "<span class='text-retro-orange font-bold'>Офисный профессионал днем, исследователь андерграунда ночью.</span> Родом из Бухары, Bek смешивает драйвовые ритмы Tech House с атмосферными мелодиями.<br/><br/>От камерных вечеринок Wild Chill до главной сцены фестиваля <span class='text-retro-orange font-bold'>Stihia</span>, он стал неотъемлемой частью ночной жизни Ташкента — принося звук будущего в такие места, как <span class='text-retro-orange font-bold'>Gravity, Zevon и The Bar.</span>"
             },
             sound: {
                 title: "Звук",
