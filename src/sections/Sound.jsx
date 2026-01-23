@@ -90,7 +90,9 @@ const Sound = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Playlist 1 */}
                         <motion.a
-                            href="#"
+                            href="https://open.spotify.com/playlist/3ttVEjsGRIj7wWFtEGWDJH?si=uJNYZd4iT-OTTAva9g0YFw&pi=eqiTfs3PTgyQ2"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +113,9 @@ const Sound = () => {
 
                         {/* Playlist 2 */}
                         <motion.a
-                            href="#"
+                            href="https://open.spotify.com/playlist/2lXkEgRcksphZBZ4nZFnl7?si=nQ2ITGSuSai5TNA-VJQv9w&pi=SZ71kal2Rg-4h"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
