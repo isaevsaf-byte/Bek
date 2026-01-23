@@ -35,7 +35,7 @@ const Sound = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="mb-12 border-l-2 border-neon-cyan pl-6"
+                    className="mb-12 border-l-2 border-neon-cyan pl-6 opacity-0"
                 >
                     <h2 className="text-4xl md:text-6xl font-orbitron font-bold uppercase text-white drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
                         {t.sound.title}
@@ -48,7 +48,7 @@ const Sound = () => {
                         href="https://soundcloud.com/begi4"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-[#FF5500] hover:shadow-[0_0_30px_rgba(255,85,0,0.3)] transition-all duration-300"
+                        className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-[#FF5500] hover:shadow-[0_0_30px_rgba(255,85,0,0.3)] transition-all duration-300 opacity-0"
                         variants={fadeInUp}
                         initial="hidden"
                         whileInView="visible"
@@ -74,7 +74,7 @@ const Sound = () => {
                         href="https://www.mixcloud.com/bekkhalimov/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-[#5000FF] hover:shadow-[0_0_30px_rgba(80,0,255,0.3)] transition-all duration-300"
+                        className="group relative block bg-gray-900 border border-white/10 p-8 rounded-sm overflow-hidden hover:border-[#5000FF] hover:shadow-[0_0_30px_rgba(80,0,255,0.3)] transition-all duration-300 opacity-0"
                         variants={fadeInUp}
                         initial="hidden"
                         whileInView="visible"
@@ -103,7 +103,7 @@ const Sound = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="mb-8"
+                        className="mb-8 opacity-0"
                     >
                         <h3 className="text-2xl md:text-3xl font-orbitron font-bold uppercase text-white mb-8">
                             {t.sound.spotify_title}
@@ -116,7 +116,7 @@ const Sound = () => {
                             href="https://open.spotify.com/playlist/3ttVEjsGRIj7wWFtEGWDJH?si=uJNYZd4iT-OTTAva9g0YFw&pi=eqiTfs3PTgyQ2"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
+                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300 opacity-0"
                             variants={fadeInUp}
                             initial="hidden"
                             whileInView="visible"
@@ -139,7 +139,7 @@ const Sound = () => {
                             href="https://open.spotify.com/playlist/2lXkEgRcksphZBZ4nZFnl7?si=nQ2ITGSuSai5TNA-VJQv9w&pi=SZ71kal2Rg-4h"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300"
+                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300 opacity-0"
                             variants={fadeInUp}
                             initial="hidden"
                             whileInView="visible"
