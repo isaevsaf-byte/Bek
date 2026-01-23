@@ -7,3 +7,29 @@
 body {
   @apply bg-background text-white font-inter;
 }
+
+@keyframes text-glitch {
+  0% {
+    text-shadow: 0.5px 0.5px 0px #ff00ff, -0.5px -0.5px 0px #00f3ff;
+  }
+
+  25% {
+    text-shadow: -0.5px -0.5px 0px #ff00ff, 0.5px 0.5px 0px #00f3ff;
+  }
+
+  50% {
+    text-shadow: 0.5px -0.5px 0px #ff00ff, -0.5px 0.5px 0px #00f3ff;
+  }
+
+  75% {
+    text-shadow: -0.5px 0.5px 0px #ff00ff, 0.5px -0.5px 0px #00f3ff;
+  }
+
+  100% {
+    text-shadow: 0.5px 0.5px 0px #ff00ff, -0.5px -0.5px 0px #00f3ff;
+  }
+}
+
+.hover-glitch:hover {
+  animation: text-glitch 0.4s cubic-bezier(.25, .46, .45, .94) both infinite;
+}

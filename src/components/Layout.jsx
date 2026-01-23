@@ -105,12 +105,24 @@ const Navbar = () => {
 };
 
 const Footer = () => {
+    const { language } = useLanguage();
+
     return (
         <footer className="bg-black border-t border-white/10 py-8">
             <div className="max-w-7xl mx-auto px-4 text-center">
-                <p className="text-gray-500 text-sm font-mono">
+                <p className="text-gray-500 text-sm font-mono mb-4">
                     © {new Date().getFullYear()} BEK TO THE FUTURE. ALL RIGHTS RESERVED.
                 </p>
+
+                <div className="footer-credit">
+                    <a
+                        href="mailto:saf@safarisaev.ai?subject=Project Inquiry (via BekToTheFuture)"
+                        className="dev-link font-mono text-gray-500 hover:text-neon-cyan transition-colors duration-300 hover-glitch inline-block"
+                    >
+                        <span className={language === 'en' ? '' : 'hidden'}>Constructed by Saf</span>
+                        <span className={language === 'ru' ? '' : 'hidden'}>Спроектировано Saf</span>
+                    </a>
+                </div>
             </div>
         </footer>
     );
