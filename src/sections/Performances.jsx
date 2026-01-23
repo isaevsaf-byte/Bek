@@ -15,9 +15,10 @@ const Performances = () => {
         <section id="performances" className="py-20 bg-black relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                     className="mb-12 border-l-2 border-retro-yellow pl-6"
                 >
                     <h2 className="text-4xl md:text-6xl font-orbitron font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-retro-yellow to-white">
@@ -32,7 +33,7 @@ const Performances = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.1, duration: 0.7, ease: "easeOut" }}
                             className="group flex flex-col md:flex-row items-center justify-between p-6 border border-white/5 hover:border-retro-yellow/50 hover:bg-white/5 transition-all duration-300 rounded-sm"
                         >
                             <div className="flex flex-col md:flex-row md:items-center gap-4 w-full md:w-auto text-center md:text-left">

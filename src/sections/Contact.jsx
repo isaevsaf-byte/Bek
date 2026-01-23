@@ -20,6 +20,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                     className="text-4xl md:text-5xl font-orbitron font-bold uppercase mb-12 text-white"
                 >
                     {t.contact.title}
@@ -27,10 +28,10 @@ const Contact = () => {
 
                 <motion.div
                     className="flex justify-center items-center gap-8 md:gap-12 mb-16"
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
+                    transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
                 >
                     {socials.map((social, index) => (
                         <a
@@ -50,7 +51,7 @@ const Contact = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
+                    transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
                 >
                     <a
                         href="mailto:contact@bektothefuture.com"

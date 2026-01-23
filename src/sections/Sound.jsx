@@ -22,9 +22,10 @@ const Sound = () => {
         <section id="sound" className="py-20 bg-background relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                     className="mb-12 border-l-2 border-neon-cyan pl-6"
                 >
                     <h2 className="text-4xl md:text-6xl font-orbitron font-bold uppercase text-white drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
@@ -42,7 +43,7 @@ const Sound = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#FF5500]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="relative z-10 flex items-center justify-between">
@@ -68,7 +69,7 @@ const Sound = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
+                        transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#5000FF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="relative z-10 flex items-center justify-between">
@@ -92,6 +93,7 @@ const Sound = () => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
                         className="mb-8"
                     >
                         <h3 className="text-2xl md:text-3xl font-orbitron font-bold uppercase text-white mb-8">
@@ -109,7 +111,7 @@ const Sound = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
+                            transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
                         >
                             <div className="flex items-center gap-4">
                                 {/* Monochrome to Green Icon */}
@@ -132,7 +134,7 @@ const Sound = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
+                            transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
                         >
                             <div className="flex items-center gap-4">
                                 {/* Monochrome to Green Icon */}
