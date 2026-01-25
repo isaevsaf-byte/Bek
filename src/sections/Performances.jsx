@@ -21,7 +21,7 @@ const Performances = () => {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     className="mb-12 border-l-2 border-retro-yellow pl-6"
                 >
-                    <h2 className="text-4xl md:text-6xl font-orbitron font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-retro-yellow to-white">
+                    <h2 className="text-2xl sm:text-4xl md:text-6xl font-orbitron font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-retro-yellow to-white">
                         {t.performances.title}
                     </h2>
                 </motion.div>
