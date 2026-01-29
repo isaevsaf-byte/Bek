@@ -54,7 +54,7 @@ const Contact = () => {
                     transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
                 >
                     <a
-                        href="mailto:contact@bektothefuture.com"
+                        href="mailto:bek.khalimov@gmail.com"
                         className="inline-block px-8 py-4 border border-white/20 text-white font-orbitron uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
                     >
                         {t.contact.email}
