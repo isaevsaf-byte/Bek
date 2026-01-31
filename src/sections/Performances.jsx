@@ -88,7 +88,6 @@ const Performances = () => {
                                 <span className={`px-3 py-1 text-xs font-bold uppercase rounded-full ${gig.Type === 'Upcoming' ? 'bg-neon-cyan/20 text-neon-cyan' : 'bg-gray-800 text-gray-500'}`}>
                                     {gig.Type === 'Upcoming' ? (language === 'ru' ? 'SCOPO' : 'UPCOMING') : (language === 'ru' ? 'PROSHLO' : 'PAST')}
                                 </span>
-                                {gig.Link && <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-retro-yellow transition-colors" />}
                             </div>
                         </motion.a>
                     ))}
