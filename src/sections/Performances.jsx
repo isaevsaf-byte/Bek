@@ -79,7 +79,7 @@ const Performances = () => {
                             className={`group flex flex-col md:flex-row items-center justify-between p-6 border border-white/5 hover:border-retro-yellow/50 hover:bg-white/5 transition-all duration-300 rounded-sm ${!gig.Link ? 'cursor-default pointer-events-none' : 'cursor-pointer'}`}
                         >
                             <div className="flex flex-col md:flex-row md:items-center gap-4 w-full md:w-auto text-center md:text-left">
-                                {/* Date hidden as requested, but we can keep a hidden element or just remove it. Removing it. */}
+                                <span className="font-mono text-retro-orange text-sm md:text-base whitespace-nowrap">{gig.Date}</span>
                                 <span className="text-2xl font-orbitron text-white group-hover:text-retro-yellow transition-colors">{gig.Venue}</span>
                             </div>
 
