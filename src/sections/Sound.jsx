@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { ExternalLink, Disc } from 'lucide-react';
+import Papa from 'papaparse';
 
 const SoundCloudIcon = ({ className }) => (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -17,6 +18,30 @@ const MixcloudIcon = ({ className }) => (
 
 const Sound = () => {
     const { t } = useLanguage();
+    const [playlists, setPlaylists] = useState([]);
+
+    useEffect(() => {
+        const fetchPlaylists = async () => {
+            try {
+                const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRdLM6P1sgVpNPCxY1p8kns-yPhzu2beqM8ryxrx3UF-yHc5iNgKcTPnJlF47hVnw/pub?gid=1005463138&single=true&output=csv');
+                const csvText = await response.text();
+
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: (results) => {
+                        const parsedData = results.data;
+                        const activePlaylists = parsedData.filter(item => item.Active === 'TRUE');
+                        setPlaylists(activePlaylists);
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching playlists:", error);
+            }
+        };
+
+        fetchPlaylists();
+    }, []);
 
     const fadeInUp = {
         hidden: { opacity: 0, y: window.innerWidth < 768 ? 0 : 30 },
@@ -111,51 +136,37 @@ const Sound = () => {
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Playlist 1 */}
-                        <motion.a
-                            href="https://open.spotify.com/playlist/3ttVEjsGRIj7wWFtEGWDJH?si=uJNYZd4iT-OTTAva9g0YFw&pi=eqiTfs3PTgyQ2"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300 opacity-0"
-                            variants={fadeInUp}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            <div className="flex items-center gap-4">
-                                {/* Monochrome to Green Icon */}
-                                <div className="p-3 bg-black rounded-full border border-white/10 group-hover:border-[#1DB954] transition-colors duration-300">
-                                    <Disc className="w-6 h-6 text-gray-400 group-hover:text-[#1DB954] transition-colors duration-300" />
+                        {playlists.map((playlist, index) => (
+                            <motion.a
+                                key={index}
+                                href={playlist.Link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300 opacity-0"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.2 }}
+                            >
+                                <div className="flex items-center gap-4">
+                                    {/* Monochrome to Green Icon */}
+                                    <div className="p-3 bg-black rounded-full border border-white/10 group-hover:border-[#1DB954] transition-colors duration-300">
+                                        <Disc className="w-6 h-6 text-gray-400 group-hover:text-[#1DB954] transition-colors duration-300" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="font-orbitron text-lg text-white group-hover:text-[#1DB954] transition-colors duration-300 top-0.5 relative">
+                                            {playlist.Title}
+                                        </span>
+                                        {playlist.Mood && (
+                                            <span className="text-xs text-gray-500 uppercase tracking-widest mt-1 group-hover:text-gray-400 transition-colors">
+                                                {playlist.Mood}
+                                            </span>
+                                        )}
+                                    </div>
                                 </div>
-                                <span className="font-orbitron text-lg text-white group-hover:text-[#1DB954] transition-colors duration-300">
-                                    {t.sound.spotify_btn_1}
-                                </span>
-                            </div>
-                            <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-[#1DB954] transition-colors" />
-                        </motion.a>
-
-                        {/* Playlist 2 */}
-                        <motion.a
-                            href="https://open.spotify.com/playlist/2lXkEgRcksphZBZ4nZFnl7?si=nQ2ITGSuSai5TNA-VJQv9w&pi=SZ71kal2Rg-4h"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center justify-between p-6 bg-gray-900 border border-white/10 rounded-sm hover:border-[#1DB954] transition-all duration-300 opacity-0"
-                            variants={fadeInUp}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            <div className="flex items-center gap-4">
-                                {/* Monochrome to Green Icon */}
-                                <div className="p-3 bg-black rounded-full border border-white/10 group-hover:border-[#1DB954] transition-colors duration-300">
-                                    <Disc className="w-6 h-6 text-gray-400 group-hover:text-[#1DB954] transition-colors duration-300" />
-                                </div>
-                                <span className="font-orbitron text-lg text-white group-hover:text-[#1DB954] transition-colors duration-300">
-                                    {t.sound.spotify_btn_2}
-                                </span>
-                            </div>
-                            <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-[#1DB954] transition-colors" />
-                        </motion.a>
+                                <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-[#1DB954] transition-colors" />
+                            </motion.a>
+                        ))}
                     </div>
                 </div>
 
