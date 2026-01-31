@@ -79,8 +79,21 @@ const Performances = () => {
                             className={`group flex flex-col md:flex-row items-center justify-between p-6 border border-white/5 hover:border-retro-yellow/50 hover:bg-white/5 transition-all duration-300 rounded-sm ${!gig.Link ? 'cursor-default pointer-events-none' : 'cursor-pointer'}`}
                         >
                             <div className="flex flex-col md:flex-row md:items-center gap-4 w-full md:w-auto text-center md:text-left">
-                                <span className="font-mono text-retro-orange text-sm md:text-base whitespace-nowrap">{gig.Date}</span>
-                                <span className="text-2xl font-orbitron text-white group-hover:text-retro-yellow transition-colors">{gig.Venue}</span>
+                                <div className={`flex items-baseline gap-1 font-mono uppercase whitespace-nowrap ${gig.Type === 'Upcoming' ? 'text-retro-orange' : 'text-gray-600'}`}>
+                                    <span className="text-lg md:text-xl font-bold">
+                                        {(() => {
+                                            const [day, month] = gig.Date.split('.');
+                                            const date = new Date(2000, parseInt(month) - 1, 1); // Mock year for month name
+                                            return `${day} ${date.toLocaleString(language === 'ru' ? 'ru' : 'en', { month: 'short' }).replace('.', '')}`;
+                                        })()}
+                                    </span>
+                                    <span className="text-xs opacity-60">
+                                        '{gig.Date.split('.')[2].slice(2)}
+                                    </span>
+                                </div>
+                                <span className={`text-2xl font-orbitron transition-colors ${gig.Type === 'Upcoming' ? 'text-white group-hover:text-retro-yellow' : 'text-gray-500 group-hover:text-gray-400'}`}>
+                                    {gig.Venue}
+                                </span>
                             </div>
 
                             <div className="flex items-center gap-6 mt-4 md:mt-0">
