@@ -99,7 +99,7 @@ const Performances = () => {
                             <div className="flex items-center gap-6 mt-4 md:mt-0">
                                 <span className="font-inter text-gray-400 uppercase tracking-wider text-sm">{gig.Location}</span>
                                 <span className={`px-3 py-1 text-xs font-bold uppercase rounded-full ${gig.Type === 'Upcoming' ? 'bg-neon-cyan/20 text-neon-cyan' : 'bg-gray-800 text-gray-500'}`}>
-                                    {gig.Type === 'Upcoming' ? (language === 'ru' ? 'SKORO' : 'UPCOMING') : (language === 'ru' ? 'PROSHLO' : 'PAST')}
+                                    {gig.Type === 'Upcoming' ? (language === 'ru' ? 'АФИША' : 'UPCOMING') : (language === 'ru' ? 'АРХИВ' : 'PAST')}
                                 </span>
                             </div>
                         </motion.a>
